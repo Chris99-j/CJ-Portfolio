@@ -69,6 +69,11 @@ const projects = {
     title: "PowerTop Prepaid Utility Platform",
     image: "assets/images/load.jpg",
     description: "Allows users to purchase prepaid electricity credits and view transaction history via QR codes and Central Payment System."
+  },
+   12: {
+    title: "Appointment System",
+    image: "assets/images/appointment.jpg",
+    description: "A user-friendly web application designed to streamline the process of booking and managing hospital appointments. It features dynamic doctor selection based on departments, real-time availability display, and calendar integration that disables unavailable dates for each doctor. Ideal for patients to conveniently schedule visits while helping hospitals manage appointment loads efficiently."
   }
 };
 
