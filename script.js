@@ -76,6 +76,16 @@ const projects = {
     description: "A user-friendly web application designed to streamline the process of booking and managing hospital appointments. It features dynamic doctor selection based on departments, real-time availability display, and calendar integration that disables unavailable dates for each doctor. Ideal for patients to conveniently schedule visits while helping hospitals manage appointment loads efficiently."
   }
 };
+13: {
+  title: "Nursing Case Management",
+  image: "assets/images/nursing.png",
+  description: "A comprehensive platform for tracking nursing cases, including patient profiles, diagnoses, treatment progress, and nurse assignments. Designed to streamline patient care and documentation in clinical settings."
+},
+14: {
+  title: "Attendance Tracker",
+  image: "assets/images/attendance.jpg",
+  description: "An efficient system for logging and monitoring attendance of employees or students. Includes timestamp logging, leave records, and weekly/monthly attendance reports for performance and compliance monitoring."
+}
 
 const modal = document.getElementById("projectModal");
 const modalTitle = document.getElementById("modalTitle");
