@@ -86,6 +86,12 @@ const projects = {
   image: "assets/images/attendance.jpg",
   description: "An efficient system for logging and monitoring attendance of employees or students. Includes timestamp logging, leave records, and weekly/monthly attendance reports for performance and compliance monitoring."
 }
+15: {
+  title: "Lesson Plan Manager",
+  image: "assets/images/lessonplan.jpg",
+  description: "A web application for teachers to create, manage, and export lesson plans. Features include saving, printing, PDF/DOCX export, and clean user interface for better planning efficiency."
+}
+
 
 const modal = document.getElementById("projectModal");
 const modalTitle = document.getElementById("modalTitle");
