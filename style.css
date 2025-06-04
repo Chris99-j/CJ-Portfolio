@@ -76,12 +76,12 @@ nav ul {
   flex-direction: column;
 }
 
-.project-card img {
+/* .project-card img {
   width: 100%;
   height: auto;
   border-radius: 6px;
   margin-bottom: 1rem;
-}
+} */
 
 .project-card h3 {
   margin: 0.5rem 0;
