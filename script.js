@@ -88,7 +88,7 @@ const projects = {
 }
 15: {
   title: "Lesson Plan Manager",
-  image: "assets/images/lessonplan.jpg",
+  image: "assets/images/lesson-plan.png",
   description: "A web application for teachers to create, manage, and export lesson plans. Features include saving, printing, PDF/DOCX export, and clean user interface for better planning efficiency."
 }
 
