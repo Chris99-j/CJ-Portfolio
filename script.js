@@ -74,9 +74,8 @@ const projects = {
     title: "Appointment System",
     image: "assets/images/appointment.jpg",
     description: "A user-friendly web application designed to streamline the process of booking and managing hospital appointments. It features dynamic doctor selection based on departments, real-time availability display, and calendar integration that disables unavailable dates for each doctor. Ideal for patients to conveniently schedule visits while helping hospitals manage appointment loads efficiently."
-  }
-};
-13: {
+  },
+  13: {
   title: "Nursing Case Management",
   image: "assets/images/nursing.png",
   description: "A comprehensive platform for tracking nursing cases, including patient profiles, diagnoses, treatment progress, and nurse assignments. Designed to streamline patient care and documentation in clinical settings."
@@ -85,12 +84,14 @@ const projects = {
   title: "Attendance Tracker",
   image: "assets/images/attendance.jpg",
   description: "An efficient system for logging and monitoring attendance of employees or students. Includes timestamp logging, leave records, and weekly/monthly attendance reports for performance and compliance monitoring."
-}
+},
 15: {
   title: "Lesson Plan Manager",
   image: "assets/images/lesson-plan.png",
   description: "A web application for teachers to create, manage, and export lesson plans. Features include saving, printing, PDF/DOCX export, and clean user interface for better planning efficiency."
 }
+};
+
 
 
 const modal = document.getElementById("projectModal");
@@ -99,32 +100,27 @@ const modalImage = document.getElementById("modalImage");
 const modalDescription = document.getElementById("modalDescription");
 const closeBtn = modal.querySelector(".close");
 
-document.querySelectorAll(".project-card").forEach(card => {
-  card.style.cursor = 'pointer'; // show pointer cursor
-  card.addEventListener("click", () => {
-    const id = card.getAttribute("data-project-id");
-    if (projects[id]) {
-      modalTitle.textContent = projects[id].title;
-      modalImage.src = projects[id].image;
-      modalImage.alt = projects[id].title;
-      modalDescription.textContent = projects[id].description;
+  document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const id = card.getAttribute('data-project-id');  // FIX here
+    const project = projects[id];
+    if (project) {
+      modalImage.src = project.image;
+      modalImage.alt = project.title;
+      modalTitle.textContent = project.title;
+      modalDescription.textContent = project.description;
       modal.style.display = "flex";
-      document.body.style.overflow = 'hidden'; // prevent background scroll
+      document.body.style.overflow = 'hidden';
     }
   });
 });
 
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
   document.body.style.overflow = '';
 });
 
-window.addEventListener("click", (event) => {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    document.body.style.overflow = '';
-  }
-});
+
 
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.style.display === "flex") {

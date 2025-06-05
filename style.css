@@ -9,6 +9,9 @@ body.dark {
   --text: #f0f0f0;
   --accent: #00bfff;
 }
+body.dark .close:hover {
+  color: #fff;
+}
 
 body {
   margin: 0;
@@ -237,13 +240,11 @@ footer {
   }
 }
 
-
-
-/* Change from this: */
-body.dark-mode {
-  background-color: #121212;
-  color: #eee;
+body.dark .modal-content {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
 }
+
 
 /* To this: */
 body.dark {
