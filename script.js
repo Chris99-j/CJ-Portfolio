@@ -91,14 +91,14 @@ const projects = {
   title: "Lesson Plan Manager",
   image: "assets/images/lesson-plan.png",
   description: "A web application for teachers to create, manage, and export lesson plans. Features include saving, printing, PDF/DOCX export, and clean user interface for better planning efficiency."
-}
+},
   16: {
     title: "Offline AI Chatbot (LLM-powered)",
     image: "assets/images/chatbot.jpg",
     description: "A local AI assistant using LangChain + Ollama + embeddings for document Q&A and offline code generation.",
     github: "https://github.com/Chris99-j/offline-ai.git",
     live: null
-  }
+  },
   17: {
     title: "Mineral Water Delivery System",
     image: "assets/images/mineral.jpg", // 🔁 update with your actual image filename
