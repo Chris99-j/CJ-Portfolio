@@ -97,6 +97,13 @@ const projects = {
     github: "https://github.com/Chris99-j/offline-ai.git",
     live: null
   }
+  17: {
+    title: "Mineral Water Delivery System",
+    image: "assets/images/mineral.png", // 🔁 update with your actual image filename
+    description: "A Vue.js web app for managing and delivering mineral water orders within a barangay. Built with a simple interface for mobile users.",
+    github: "https://github.com/Chris99-j/Mineral-Delivery.git",
+    live: "https://chris99-j.github.io/Mineral-Delivery/"
+  }
 };
 
 
