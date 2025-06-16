@@ -58,7 +58,9 @@ const projects = {
   9: {
     title: "Ease Ticketing System",
     image: "assets/images/e-ticketing.jpg",
-    description: "Handles event ticket sales, reservations, payment, and support all in one integrated platform."
+    description: "Handles event ticket sales, reservations, payment, and support all in one integrated platform.",
+     github: "https://github.com/Chris99-j/Ticket-Booking.git",
+    live: "https://chris99-j.github.io/Ticket-Booking/"
   },
   10: {
     title: "Project Management System",
