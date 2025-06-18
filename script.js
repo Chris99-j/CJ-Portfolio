@@ -105,7 +105,14 @@ const projects = {
     description: "A Vue.js web app for managing and delivering mineral water orders within a barangay. Built with a simple interface for mobile users.",
     github: "https://github.com/Chris99-j/Mineral-Delivery.git",
     live: "https://chris99-j.github.io/Mineral-Delivery/"
-  }
+  },
+  18: {
+  title: "Auto Balance Sheet System",
+  image: "assets/images/balance-sheet.jpg", // 🔁 update with your actual image filename
+  description: "An HTML/CSS/JS web app that helps users input and auto-balance assets, liabilities, and equity. Includes Excel export feature.",
+  github: "https://github.com/Chris99-j/balance-sheet.git",
+  live: "https://chris99-j.github.io/balance-sheet/"
+}
 };
 
 
