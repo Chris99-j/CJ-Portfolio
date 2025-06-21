@@ -115,7 +115,7 @@ const projects = {
 },
   19: {
   title: "AI Website Tester",
-  image: "assets/images/Web-testing.jpg", // 🔁 Add a real screenshot here
+  image: "assets/images/Web-Testing.jpg", // 🔁 Add a real screenshot here
   description: "A frontend-only web app that uses a local LLM (via Ollama) to analyze HTML, CSS, and JavaScript code for accessibility, SEO, UX, and security issues. Features include code preview with syntax highlighting, file upload, PDF report export, and mobile-responsive UI.",
   github: "https://github.com/Chris99-j/ai-tester.git",
   live: null
