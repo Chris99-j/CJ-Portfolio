@@ -119,6 +119,21 @@ const projects = {
   description: "A frontend-only web app that uses a local LLM (via Ollama) to analyze HTML, CSS, and JavaScript code for accessibility, SEO, UX, and security issues. Features include code preview with syntax highlighting, file upload, PDF report export, and mobile-responsive UI.",
   github: "https://github.com/Chris99-j/ai-web-tester.git",
   live: null
+},
+  20: {
+  title: "Bug Tracker",
+  image: "assets/images/defect.jpg", // Add screenshot or placeholder
+  description: "A frontend-only bug and defect management tool built with React + TypeScript + CSS. Allows logging, editing, filtering, and exporting bugs to PDF, CSV, or Excel. Mobile-responsive UI.",
+  github: "https://github.com/Chris99-j/bug-tracker",
+  live: "https://Chris99-j.github.io/bug-tracker"
+},
+
+21: {
+  title: "Test Case Manager",
+  image: "assets/images/testcase.png", // Add screenshot or placeholder
+  description: "A simple test case documentation system for QA teams. Add, update, delete, and export test cases. Features include mobile-friendly UI, editable table, and export to CSV/PDF/Excel. Built with React + TypeScript + CSS.",
+  github: "https://github.com/Chris99-j/test-case",
+  live: "https://Chris99-j.github.io/test-case"
 }
 
 };
