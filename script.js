@@ -1,185 +1,151 @@
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
+// Unique, self-contained JS for portfolio interactions
+(function () {
+  'use strict';
 
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  themeToggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+  /* ====== Helpers ====== */
+  function q(sel, root = document) { return root.querySelector(sel); }
+  function qa(sel, root = document) { return Array.from((root || document).querySelectorAll(sel)); }
+
+  /* ====== Menu toggle for small screens ====== */
+  (function menuToggle() {
+    const btn = q('#menuToggle');
+    const nav = q('#mainNav');
+    if (!btn || !nav) return;
+   btn.addEventListener('click', () => {
+  const isOpen = nav.style.display === 'flex';
+  nav.style.display = isOpen ? '' : 'flex';
+  nav.style.flexDirection = isOpen ? '' : 'column';
+  nav.style.gap = isOpen ? '' : '12px';
 });
 
-function openModal(projectTitle) {
-  document.getElementById('projectModal').style.display = 'flex';
-  document.getElementById('modalTitle').textContent = projectTitle;
-}
+  })();
 
-function closeModal() {
-  document.getElementById('projectModal').style.display = 'none';
-}
-const projects = {
-  1: {
-    title: "TalentFlow HR Suite",
-    image: "assets/images/hr.jpg",
-    description: "Oversees recruitment, employee records, payroll, leave management, and performance evaluations with secure, role-based access."
-  },
-  2: {
-    title: "CivicAid Request Portal or Request Assistance System",
-    image: "assets/images/asisstance.jpg",
-    description: "Enables submission, approval, and monitoring of various forms of client or public assistance requests with a seamless UI."
-  },
-  3: {
-    title: "Permit Express or Business Permit System",
-    image: "assets/images/business.jpg",
-    description: "Automates permit applications, renewals, and compliance for businesses with real-time status tracking and approval workflow."
-  },
-  4: {
-    title: "Alert Response or Emergency Alert System",
-    image: "assets/images/emergency.jpg",
-    description: "Facilitates real-time emergency reporting and response coordination with automated alert notifications for quick deployment."
-  },
-  5: {
-    title: "Information Center System",
-    image: "assets/images/announcement.png",
-    description: "Publishes official announcements, community updates, and public records via an admin-controlled content management interface."
-  },
-  6: {
-    title: "JusticeTrack Management System",
-    image: "assets/images/casemanagement.jpg",
-    description: "Tracks, updates, and resolves cases with role-based access, status monitoring, and case analytics tools."
-  },
-  7: {
-    title: "Online Shopping System",
-    image: "assets/images/marketplace.jpg",
-    description: "Includes vendor registration, product listings, cart management, payment processing, and customer feedback tools."
-  },
-  8: {
-    title: "Payment System",
-    image: "assets/images/onlinepayments.png",
-    description: "Processes digital payments with invoicing, billing, and automatic confirmation notifications."
-  },
-  9: {
-    title: "Ease Ticketing System",
-    image: "assets/images/e-ticketing.jpg",
-    description: "Handles event ticket sales, reservations, payment, and support all in one integrated platform.",
-     github: "https://github.com/Chris99-j/Ticket-Booking.git",
-    live: "https://chris99-j.github.io/Ticket-Booking/"
-  },
-  10: {
-    title: "Project Management System",
-    image: "assets/images/management.jpg",
-    description: "Enables collaborative task planning, resource allocation, and project tracking with user role controls."
-  },
-  11: {
-    title: "PowerTop Prepaid Utility Platform",
-    image: "assets/images/load.jpg",
-    description: "Allows users to purchase prepaid electricity credits and view transaction history via QR codes and Central Payment System."
-  },
-   12: {
-    title: "Appointment System",
-    image: "assets/images/appointment.jpg",
-    description: "A user-friendly web application designed to streamline the process of booking and managing hospital appointments. It features dynamic doctor selection based on departments, real-time availability display, and calendar integration that disables unavailable dates for each doctor. Ideal for patients to conveniently schedule visits while helping hospitals manage appointment loads efficiently."
-  },
-  13: {
-  title: "Nursing Case Management",
-  image: "assets/images/nursing.png",
-  description: "A comprehensive platform for tracking nursing cases, including patient profiles, diagnoses, treatment progress, and nurse assignments. Designed to streamline patient care and documentation in clinical settings."
-},
-14: {
-  title: "Attendance Tracker",
-  image: "assets/images/attendance.jpg",
-  description: "An efficient system for logging and monitoring attendance of employees or students. Includes timestamp logging, leave records, and weekly/monthly attendance reports for performance and compliance monitoring."
-},
-15: {
-  title: "Lesson Plan Manager",
-  image: "assets/images/lesson-plan.png",
-  description: "A web application for teachers to create, manage, and export lesson plans. Features include saving, printing, PDF/DOCX export, and clean user interface for better planning efficiency."
-},
-  16: {
-    title: "Offline AI Chatbot (LLM-powered)",
-    image: "assets/images/chatbot.jpg",
-    description: "A local AI assistant using LangChain + Ollama + embeddings for document Q&A and offline code generation.",
-    github: "https://github.com/Chris99-j/offline-ai.git",
-    live: null
-  },
-  17: {
-    title: "Mineral Water Delivery System",
-    image: "assets/images/mineral.jpg", // 🔁 update with your actual image filename
-    description: "A Vue.js web app for managing and delivering mineral water orders within a barangay. Built with a simple interface for mobile users.",
-    github: "https://github.com/Chris99-j/Mineral-Delivery.git",
-    live: "https://chris99-j.github.io/Mineral-Delivery/"
-  },
-  18: {
-  title: "Auto Balance Sheet System",
-  image: "assets/images/balance-sheet.webp", // 🔁 update with your actual image filename
-  description: "An HTML/CSS/JS web app that helps users input and auto-balance assets, liabilities, and equity. Includes Excel export feature.",
-  github: "https://github.com/Chris99-j/balance-sheet.git",
-  live: "https://chris99-j.github.io/balance-sheet/"
-},
-  19: {
-  title: "AI Website Tester",
-  image: "assets/images/web-testing.jpg", // 🔁 Add a real screenshot here
-  description: "A frontend-only web app that uses a local LLM (via Ollama) to analyze HTML, CSS, and JavaScript code for accessibility, SEO, UX, and security issues. Features include code preview with syntax highlighting, file upload, PDF report export, and mobile-responsive UI.",
-  github: "https://github.com/Chris99-j/ai-web-tester.git",
-  live: null
-},
-  20: {
-  title: "Bug Tracker",
-  image: "assets/images/defect.jpg", // Add screenshot or placeholder
-  description: "A frontend-only bug and defect management tool built with React + TypeScript + CSS. Allows logging, editing, filtering, and exporting bugs to PDF, CSV, or Excel. Mobile-responsive UI.",
-  github: "https://github.com/Chris99-j/bug-tracker",
-  live: "https://Chris99-j.github.io/bug-tracker",
-},
+  /* ====== Simple reveal on scroll (IntersectionObserver) ====== */
+  (function revealOnScroll() {
+    const items = qa('.reveal');
+    if (!items.length) return;
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(it => io.observe(it));
+  })();
 
-21: {
-  title: "Test Case Manager",
-  image: "assets/images/testcase.png", // Add screenshot or placeholder
-  description: "A simple test case documentation system for QA teams. Add, update, delete, and export test cases. Features include mobile-friendly UI, editable table, and export to CSV/PDF/Excel. Built with React + TypeScript + CSS.",
-  github: "https://github.com/Chris99-j/test-case",
-  live: "https://Chris99-j.github.io/test-case",
-},
-  22: {
-    title: "Trading Platform Mockup",
-    image: "assets/images/trading.jpg",
-    description: "A fully responsive trading app UI built using pure HTML, CSS, and JavaScript. Includes login/logout, bottom tab navigation, Buy/Sell form, crypto chart, and mock portfolio features.",
-    github: "https://github.com/Chris99-j/trading",
-    live: "https://Chris99-j.github.io/trading",
-  }
+  /* ====== Carousel logic (keyboard + buttons + drag) ====== */
+  (function projectsCarousel() {
+    const carousel = q('#projectCarousel');
+    const btnPrev = q('#prevProject');
+    const btnNext = q('#nextProject');
+    if (!carousel) return;
 
-
-};
-
-
-
-const modal = document.getElementById("projectModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalImage = document.getElementById("modalImage");
-const modalDescription = document.getElementById("modalDescription");
-const closeBtn = modal.querySelector(".close");
-
-  document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const id = card.getAttribute('data-project-id');  // FIX here
-    const project = projects[id];
-    if (project) {
-      modalImage.src = project.image;
-      modalImage.alt = project.title;
-      modalTitle.textContent = project.title;
-      modalDescription.textContent = project.description;
-      modal.style.display = "flex";
-      document.body.style.overflow = 'hidden';
+    // calculate scroll offset based on first card width
+    function cardOffset() {
+      const first = carousel.querySelector('.project-card');
+      if (!first) return 360;
+      const style = getComputedStyle(first);
+      const gap = parseFloat(getComputedStyle(carousel).gap || 16);
+      return Math.round(first.offsetWidth + gap);
     }
-  });
-});
 
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-  document.body.style.overflow = '';
-});
+    function scrollByDir(dir) {
+      carousel.scrollBy({ left: dir * cardOffset(), behavior: 'smooth' });
+    }
 
+    btnPrev && btnPrev.addEventListener('click', () => scrollByDir(-1));
+    btnNext && btnNext.addEventListener('click', () => scrollByDir(1));
 
+    // keyboard navigation while focused
+    carousel.addEventListener('keydown', (ev) => {
+      if (ev.key === 'ArrowRight') scrollByDir(1);
+      if (ev.key === 'ArrowLeft') scrollByDir(-1);
+    });
 
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal.style.display === "flex") {
-    modal.style.display = "none";
-    document.body.style.overflow = '';
+    // drag-to-scroll for touch/mouse
+    (function drag() {
+      let active = false, startX = 0, scrollStart = 0;
+     carousel.addEventListener('pointerup', (e) => {
+  active = false;
+  carousel.releasePointerCapture && carousel.releasePointerCapture(e.pointerId);
+  carousel.classList.remove('dragging');
+
+  // allow clicks only if no significant drag
+  const dx = Math.abs(e.clientX - startX);
+  if (dx < 5) {
+    const link = e.target.closest('a');
+    if (link) link.click();
   }
 });
+
+      carousel.addEventListener('pointermove', (e) => {
+        if (!active) return;
+        const dx = e.clientX - startX;
+        carousel.scrollLeft = scrollStart - dx;
+      });
+      ['pointerup','pointercancel','pointerleave'].forEach(ev => {
+        carousel.addEventListener(ev, (e) => {
+          if (!active) return;
+          active = false;
+          carousel.releasePointerCapture && carousel.releasePointerCapture(e.pointerId);
+          carousel.classList.remove('dragging');
+        });
+      });
+    })();
+
+    // keep cardOffset responsive on resize
+    window.addEventListener('resize', () => {/* no-op but available if needed */});
+  })();
+
+  /* ====== Modal / message box ====== */
+  (function messageModal() {
+    const modal = q('#messageModal');
+    const btn = q('#downloadCv');
+    const ok = q('#modalOk');
+    const txt = q('#modalMessage');
+
+    if (!modal || !btn || !ok || !txt) return;
+
+    function open(msg = '') {
+      txt.textContent = msg;
+      modal.setAttribute('aria-hidden', 'false');
+    }
+    function close() {
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    btn.addEventListener('click', () => open('Resume download initiated (demo).'));
+    ok.addEventListener('click', close);
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  })();
+
+  /* ====== Initialize progress bars from inline style var (--p) ====== */
+  (function initProgressVars() {
+    // nothing to do: CSS reads --p values directly. Provided in HTML via style attr on spans.
+    // but ensure they exist or fallback:
+    qa('.skill-item dd span').forEach(sp => {
+      const val = getComputedStyle(sp).getPropertyValue('--p').trim();
+      if (!val) sp.style.setProperty('--p', '50%');
+    });
+  })();
+
+  /* ====== Accessibility: smooth scroll for internal links ====== */
+  (function smoothAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = a.getAttribute('href');
+        if (target === '#' || target === '') return;
+        const el = document.querySelector(target);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  })();
+
+})();
 

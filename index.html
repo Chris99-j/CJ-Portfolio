@@ -1,273 +1,650 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="smooth-scroll">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Christopher Balolong | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Christopher Balolong — Developer Portfolio</title>
+
+  <!-- Local stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header>
-    <div class="logo">My sPortfolio</div>
-    <nav>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-       <button id="themeToggle">🌙</button>
-      </ul>
-    </nav>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">Welcome to My Profile</a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#hero">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="menuToggle" aria-label="Toggle menu" class="menu-btn">
+        <!-- simple inline menu icon -->
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+          <rect y="4" width="24" height="2" rx="1" />
+          <rect y="11" width="24" height="2" rx="1" />
+          <rect y="18" width="24" height="2" rx="1" />
+        </svg>
+      </button>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Hello, I'm <span>Christopher</span></h1>
-    <p>SQA Automation Engineer & Fullstack Developer & Aspiring Cybersecurity</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </section>
-<section id="projects" class="projects">
-  <h2>Featured Projects</h2>
-  <div class="project-grid">
-    <div class="project-card" data-project-id="1">
-      <img src="assets/images/hr.jpg" alt="HR Management System" />
-      <h3>TalentFlow HR Suite</h3>
-      <p>Oversees recruitment, employee records, payroll, leave management, and performance evaluations with secure, role-based access.</p>
-    </div>
-    <div class="project-card" data-project-id="13">
-  <img src="assets/images/nursing.png" alt="Nursing Case Management System" />
-  <h3>Nursing Case Management</h3>
-  <p>A system to monitor patient cases, track treatment history, and manage nurse assignments efficiently in healthcare environments.</p>
-  <a href="https://github.com/Chris99-j/nursing-case" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="https://chris99-j.github.io/nursing-case/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-</div>
+  <main class="container main-content">
 
-   <div class="project-card" data-project-id="14">
-  <img src="assets/images/attendance.jpg" alt="Attendance Tracker System" />
-  <h3>Attendance Tracker</h3>
-  <p>A tracking system for logging attendance with timestamps, leave monitoring, and real-time reporting for staff or students.</p>
-  <a href="https://github.com/Chris99-j/attendance" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="https://chris99-j.github.io/attendance/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-</div>
+    <!-- Hero / About -->
+    <section id="hero" class="hero-section reveal">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="muted-intro">Hello, Mabuhay! I'm Christopher 👋</p>
+          <h1 class="hero-title">Developer / QA Engineer / AI Automation Specialist</h1>
+          <p class="hero-sub">
+            I’m a passionate and versatile developer who builds reliable, scalable web systems using
+            PHP(Codeigniter/Laravel),Python, Django, Vue.js, and React.js. My focus is on crafting beautiful, efficient,
+            and automated solutions — from banking and payroll systems to POS and e-learning platforms.
 
-    <div class="project-card" data-project-id="15">
-  <img src="assets/images/lesson-plan.png" alt="Lesson Plan Manager" />
-  <h3>Lesson Plan Manager</h3>
-  <p>A web app for teachers to create, save, and export lesson plans with support for print, PDF, and DOCX formats.</p>
-  <a href="https://github.com/Chris99-j/lesson-plan.git" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="https://chris99-j.github.io/lesson-plan/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-</div>
+            I thrive in both frontend and backend development, and bring hands-on experience in QA testing (manual &
+            automated) and AI-driven automation workflows.
 
+            I’m open to part-time, full-time, or contractual roles where I can create meaningful digital experiences and
+            help teams innovate with confidence.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">Get in touch</a>
+          </div>
+        </div>
 
-    <div class="project-card" data-project-id="12">
-      <img src="assets/images/appointment.jpg" alt="Appointment Setter System" />
-    <h3>Hospital Appointment Setter</h3>
-    <p>A web app to book and manage hospital appointments with doctor availability features.</p>
-    <a href="https://github.com/Chris99-j/appointment-setter" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-    <a href="https://chris99-j.github.io/appointment-setter/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-  </div>
-    <div class="project-card" data-project-id="2">
-      <img src="assets/images/asisstance.jpg" alt="Online Assistance System" />
-      <h3>CivicAid Request Portal or Request Assistance System</h3>
-      <p>Enables submission, approval, and monitoring of various forms of client or public assistance requests with a seamless UI.</p>
-    </div>
-    <div class="project-card" data-project-id="3">
-      <img src="assets/images/business.jpg" alt="Online Business Permit System" />
-      <h3>Permit Express or Business Permit System</h3>
-      <p>Automates permit applications, renewals, and compliance for businesses with real-time status tracking and approval workflow.</p>
-    </div>
-    <div class="project-card" data-project-id="4">
-      <img src="assets/images/emergency.jpg" alt="Online Emergency System" />
-      <h3>Alert Response or Emergency Alert System</h3>
-      <p>Facilitates real-time emergency reporting and response coordination with automated alert notifications for quick deployment.</p>
-    </div>
-    <div class="project-card" data-project-id="5">
-      <img src="assets/images/announcement.png" alt="Public Information System" />
-      <h3>Information Center System</h3>
-      <p>Publishes official announcements, community updates, and public records via an admin-controlled content management interface.</p>
-    </div>
-    <div class="project-card" data-project-id="6">
-      <img src="assets/images/casemanagement.jpg" alt="Case Management System" />
-      <h3>JusticeTrack Management System</h3>
-      <p>Tracks, updates, and resolves cases with role-based access, status monitoring, and case analytics tools.</p>
-    </div>
-    <div class="project-card" data-project-id="7">
-  <img src="assets/images/marketplace.jpg" alt="Online Market System" />
-  <h3>Online Shopping System</h3>
-  <p>Includes vendor registration, product listings, cart management, payment processing, and customer feedback tools.</p>
-  <a href="https://github.com/Chris99-j/online-shopping.git" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="https://chris99-j.github.io/online-shopping/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-</div>
+        <div class="hero-avatar" aria-hidden="true">
+          <div class="avatar-ring">
+            <img src="assets/images/pic2.jpg" alt="Christopher John Balolong" class="avatar-photo">
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="project-card" data-project-id="8">
-      <img src="assets/images/onlinepayments.png" alt="Online Payment System" />
-      <h3>Payment System</h3>
-      <p>Processes digital payments with invoicing, billing, and automatic confirmation notifications.</p>
-    </div>
-    <div class="project-card" data-project-id="9">
-      <img src="assets/images/e-ticketing.jpg" alt="Online Ticketing System" />
-      <h3>Ease Ticketing System</h3>
-      <p>Handles event ticket sales, reservations, payment, and support all in one integrated platform.</p>
-       <a href="https://github.com/Chris99-j/Ticket-Booking.git" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-    <a href="https://chris99-j.github.io/Ticket-Booking/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-    </div>
-    <div class="project-card" data-project-id="10">
-      <img src="assets/images/management.jpg" alt="Project Management System" />
-      <h3>Project Management System</h3>
-      <p>Enables collaborative task planning, resource allocation, and project tracking with user role controls.</p>
-    </div>
-    <div class="project-card" data-project-id="11">
-      <img src="assets/images/load.jpg" alt="Electricity Load System" />
-      <h3>PowerTop Prepaid Utility Platform</h3>
-      <p>Allows users to purchase prepaid electricity credits and view transaction history via QR codes and Central Payment System.</p>
-    </div>
-    <div class="project-card" data-project-id="16">
-  <img src="assets/images/chatbot.jpg" alt="Offline AI Chatbot" />
-  <h3>Offline AI Chatbot (LLM-powered)</h3>
-  <p>A local AI assistant using LangChain + Ollama + embeddings for document Q&A and offline code generation.</p>
-  <a href="https://github.com/Chris99-j/offline-ai.git" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="#" onclick="alert('This runs offline — no live demo available'); return false;">Offline Only</a>
-</div>
-<div class="project-card" data-project-id="17">
-    <img src="assets/images/mineral.jpg" alt="Mineral Water Delivery System" />
-    <h3>Mineral Water Delivery System</h3>
-    <p>A Vue.js web app for managing and delivering mineral water orders within a barangay. Built with a simple interface for mobile users.</p>
-    <a href="https://github.com/Chris99-j/Mineral-Delivery.git" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-    <a href="https://chris99-j.github.io/Mineral-Delivery/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-  </div>
-    <div class="project-card" data-project-id="18">
-  <img src="assets/images/balance-sheet.webp" alt="Auto Balance Sheet System" />
-  <h3>Auto Balance Sheet System</h3>
-  <p>An HTML/CSS/JS-based web app that helps users input and automatically calculate and balance assets, liabilities, and equity. Includes Excel export functionality.</p>
-  <a href="https://github.com/Chris99-j/balance-sheet.git" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="https://chris99-j.github.io/balance-sheet/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-</div>
-    <div class="project-card" data-project-id="19">
-  <img src="assets/images/web-testing.jpg" alt="AI Website Tester" />
-  <h3>AI Website Tester</h3>
-  <p>A frontend-only AI-powered tool that analyzes HTML/CSS/JS code for accessibility, SEO, UX, and security issues using a local LLM (Ollama).</p>
-  <a href="https://github.com/Chris99-j/ai-web-tester.git" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="#" onclick="alert('This runs offline — no live demo available'); return false;">Offline Only</a>
-</div>
-<div class="project-card" data-project-id="20">
-  <img src="assets/images/defect.jpg" alt="Bug Tracker" />
-  <h3>Bug Tracker</h3>
-  <p>A frontend-only bug and defect management system. Add, edit, filter, and export bugs to PDF, CSV, or Excel. Built with React + TypeScript + pure CSS.</p>
-  <a href="https://github.com/Chris99-j/bug-tracker" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="https://Chris99-j.github.io/bug-tracker" target="_blank" rel="noopener noreferrer">Live Demo</a>
-</div>
+    <!-- Projects -->
+    <section id="projects" class="section reveal">
+      <div class="section-head">
+        <h2>Featured Projects</h2>
+        <p class="muted">Swipe or use arrows to navigate</p>
+      </div>
 
-<div class="project-card" data-project-id="21">
-  <img src="assets/images/testcase.png" alt="Test Case Manager" />
-  <h3>Test Case Manager</h3>
-  <p>A lightweight, mobile-friendly tool for documenting QA test cases. Supports export to PDF, CSV, and Excel. Made with React, TypeScript, and pure CSS.</p>
-  <a href="https://github.com/Chris99-j/test-case" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="https://Chris99-j.github.io/test-case" target="_blank" rel="noopener noreferrer">Live Demo</a>
-</div>
-<div class="project-card" data-project-id="22">
-  <img src="assets/images/trading.jpg" alt="Trading Platform Mockup" />
-  <h3>Trading Platform Mockup</h3>
-  <p>A fully responsive trading app UI built using pure HTML, CSS, and JavaScript. Features Buy/Sell form, multi-coin chart, and portfolio/history sections.</p>
-  <a href="https://github.com/Chris99-j/trading" target="_blank" rel="noopener noreferrer">GitHub Repo</a><br />
-  <a href="https://Chris99-j.github.io/trading" target="_blank" rel="noopener noreferrer">Live Demo</a>
-</div>
+      <div class="carousel-wrap">
+        <button class="carousel-btn" id="prevProject" aria-label="Previous project">‹</button>
 
-  </div>
-</section>
+        <div class="carousel" id="projectCarousel" tabindex="0" aria-roledescription="carousel">
+          <!-- Project cards -->
+          <article class="card project-card">
+            <h3>Nursing Case Management</h3>
+            <p class="card-desc">A comprehensive platform for tracking nursing cases, including patient profiles,
+              diagnoses, treatment progress, and nurse assignments. Designed to streamline patient care and
+              documentation in clinical settings.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/nursing-case" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/nursing-case/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
 
-<!-- Modal -->
-<div id="projectModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3 id="modalTitle">Project Title</h3>
-    <img id="modalImage" src="" alt="" style="width:100%; border-radius:8px; margin-bottom:1rem;" />
-    <p id="modalDescription">Project description goes here.</p>
-  </div>
-</div>
+          <article class="card project-card">
+            <h3>Attendance Tracker</h3>
+            <p class="card-desc">An efficient system for logging and monitoring attendance of employees or students.
+              Includes timestamp logging, leave records, and weekly/monthly attendance reports for performance and
+              compliance monitoring.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Vite</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/attendance" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/attendance/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
 
+          <article class="card project-card">
+            <h3>Lesson Plan Manager</h3>
+            <p class="card-desc">A web application for teachers to create, manage, and export lesson plans. Features
+              include saving, printing, PDF/DOCX export, and clean user interface for better planning efficiency.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/lesson-plan" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/lesson-plan/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
 
+          <article class="card project-card">
+            <h3>Appointment System</h3>
+            <p class="card-desc">A user-friendly web application designed to streamline the process of booking and
+              managing hospital appointments. It features dynamic doctor selection based on departments, real-time
+              availability display, and calendar integration that disables unavailable dates for each doctor. Ideal for
+              patients to conveniently schedule visits while helping hospitals manage appointment loads efficiently.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/appointment-setter" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/appointment-setter/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
 
- <section id="about">
-  <h2>About Me</h2>
-  <p>
-    I'm a multidisciplinary System Developer, QA Tester, and aspiring Cybersecurity Specialist with over two years of hands-on experience building and testing secure, user-centric web applications. My work bridges the gap between function and form—balancing backend logic, frontend clarity, and user experience.
-  </p>
-  <p>
-    I’ve designed and tested systems ranging from HR management to emergency platforms, using tools like PHP, CodeIgniter, Playwright, Swagger, and JIRA. Whether I’m wireframing a new feature, validating APIs, or crafting scalable databases, I prioritize clean architecture, intuitive flows, and security by design.
-  </p>
-  <p>
-    I'm passionate about improving digital experiences through thoughtful design, data-driven testing, and automation. I’m currently deepening my skills in cybersecurity (CCNA track) while building real-world solutions that solve practical problems.
-  </p>
+          <article class="card project-card">
+            <h3>Offline AI Chatbot (LLM-powered)</h3>
+            <p class="card-desc">A local AI assistant using LangChain + Ollama + embeddings for document Q&A and offline
+              code generation.</p>
+            <ul class="tags">
+              <li>LangChain</li>
+              <li>Ollama</li>
+              <li>FAISS</li>
+              <li>Streamlit</li>
+              <li>Python</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/offline-ai" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a href="#" class="link"
+              onclick="alert('This runs offline — no live demo available'); return false;">Offline Only</a>
+          </article>
 
-  <h3>Skills & Tools</h3>
+          <article class="card project-card">
+            <h3>Online Shopping System</h3>
+            <p class="card-desc">Includes vendor registration, product listings, cart management, payment processing,
+              and customer feedback tools.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Vite</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/online-shopping" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/online-shopping/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Ease Ticketing System</h3>
+            <p class="card-desc">Handles event ticket sales, reservations, payment, and support all in one integrated
+              platform.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Vue.js</li>
+              <li>Vite</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/Ticket-Booking" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/Ticket-Booking/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Mineral Water Delivery System</h3>
+            <p class="card-desc">A Vue.js web app for managing and delivering mineral water orders within a barangay.
+              Built with a simple interface for mobile users. </p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Vue.js</li>
+              <li>Vite</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/Mineral-Delivery" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/Mineral-Delivery/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Auto Balance Sheet System</h3>
+            <p class="card-desc">An HTML/CSS/JS web app that helps users input and auto-balance assets, liabilities, and
+              equity. Includes Excel export feature.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/balance-sheet" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/balance-sheet/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>AI Website Tester</h3>
+            <p class="card-desc">A frontend-only web app that uses a local LLM (via Ollama) to analyze HTML, CSS, and
+              JavaScript code for accessibility, SEO, UX, and security issues. Features include code preview with syntax
+              highlighting, file upload, PDF report export, and mobile-responsive UI.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Vite</li>
+              <li>LLaMA3</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/ai-web-tester" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a href="#" class="link"
+              onclick="alert('This runs offline — no live demo available'); return false;">Offline Only</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Appointment System</h3>
+            <p class="card-desc">A user-friendly web application designed to streamline the process of booking and
+              managing hospital appointments. It features dynamic doctor selection based on departments, real-time
+              availability display, and calendar integration that disables unavailable dates for each doctor. Ideal for
+              patients to conveniently schedule visits while helping hospitals manage appointment loads efficiently.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/appointment-setter" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/appointment-setter/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Bug Tracker</h3>
+            <p class="card-desc">A frontend-only bug and defect management tool built with React + TypeScript + CSS.
+              Allows logging, editing, filtering, and exporting bugs to PDF, CSV, or Excel. Mobile-responsive UI.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>Vite</li>
+              <li>React</li>
+              <li>jsPDF</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/bug-tracker" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/bug-tracker/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Test Case Manager</h3>
+            <p class="card-desc">A simple test case documentation system for QA teams. Add, update, delete, and export
+              test cases. Features include mobile-friendly UI, editable table, and export to CSV/PDF/Excel. Built with
+              React + TypeScript + CSS.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>Vite</li>
+              <li>React</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/test-case" target="_blank" rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/test-case/" target="_blank" rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Trading Platform Mockup</h3>
+            <p class="card-desc">A fully responsive trading app UI built using pure HTML, CSS, and JavaScript. Includes
+              login/logout, bottom tab navigation, Buy/Sell form, crypto chart, and mock portfolio features.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/trading" target="_blank" rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/trading/" target="_blank" rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Mini mock up Bank System</h3>
+            <p class="card-desc">A functional prototype of a banking system designed to demonstrate core banking
+              operations. Features include account management, fund transfers, transaction history, and responsive UI
+              for both desktop and mobile. Built with Vue 3, TypeScript, and CSS, emphasizing clean code, intuitive user
+              experience, and easy scalability for future enhancements</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>TypeScript</li>
+              <li>Vite</li>
+              <li>Vue 3</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/mini-bank" target="_blank" rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/mini-bank/#/login" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Animal Care System</h3>
+            <p class="card-desc">A comprehensive platform to manage animal care and adoption operations. Features
+              include animal profiles, health records, adoption tracking, and task management for caretakers. The system
+              is designed with a responsive, user-friendly interface, making it easy to manage daily operations on
+              desktop or mobile. Built with HTML, JavaScript, and CSS, focusing on efficiency, scalability, and clean,
+              maintainable code.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/animal-care" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/animal-care/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Basic Health Calculator Suite</h3>
+            <p class="card-desc">A lightweight web application that helps users calculate essential health metrics,
+              including BMI, BMR, and daily caloric needs. Features a clean, responsive interface for easy use on both
+              desktop and mobile devices. Built with HTML, JavaScript, and CSS, emphasizing accurate calculations,
+              intuitive design, and maintainable code for future enhancements.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/med-calculator" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/med-calculator/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Mock up Social Media</h3>
+            <p class="card-desc">A custom social media application that allows users to create profiles, share posts,
+              react and comment on updates, and connect with other users. Features a dynamic feed and responsive
+              interface for both desktop and mobile. Built with HTML, JavaScript, and CSS, focusing on intuitive user
+              experience, scalable architecture, and clean, maintainable code.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/Social-med" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/Social-med/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+
+          <article class="card project-card">
+            <h3>Airplain Game</h3>
+            <p class="card-desc">An interactive web-based game where players pilot an airplane, avoid obstacles, and
+              collect points to achieve high scores. Features smooth animations, responsive controls, and engaging
+              gameplay. Built with HTML, CSS, and JavaScript, focusing on performance, fun user experience, and clean,
+              maintainable code.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="link" href="https://github.com/Chris99-j/Airplane" target="_blank"
+              rel="noopener noreferrer">View
+              repository →</a>
+            <a class="link" href="https://chris99-j.github.io/Airplane/" target="_blank"
+              rel="noopener noreferrer">View
+              Live demo →</a>
+          </article>
+        </div>
+
+        <button class="carousel-btn" id="nextProject" aria-label="Next project">›</button>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section reveal">
+  <h2>My Expertise</h2> <br>
+
   <div class="skills-grid">
-    <div class="skill-card">
-      <h4>Languages</h4>
-      <ul>
-        <li>PHP</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>SQL</li>
-        <li>HTML & CSS</li>
-        <li>Typescript</li>
-         <li>React js</li>
-        <li>Vite</li>
+    <!-- Languages -->
+    <div class="skill-block">
+      <h3>Languages</h3>
+      <dl class="skill-list">
+        <div class="skill-item">
+          <dt>Python</dt>
+          <dd><span style="--p:75%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>CSS/HTML/ JavaScript</dt>
+          <dd><span style="--p:90%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>TypeScript</dt>
+          <dd><span style="--p:60%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>C++</dt>
+          <dd><span style="--p:40%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>C#</dt>
+          <dd><span style="--p:30%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>MySQL</dt>
+          <dd><span style="--p:90%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>PHP</dt>
+          <dd><span style="--p:90%"></span></dd>
+        </div>
+      </dl>
+    </div>
+
+      <!-- QA / Automation -->
+    <div class="skill-block">
+      <h3>QA / Automation</h3>
+      <dl class="skill-list">
+        <div class="skill-item">
+          <dt>Playwright</dt>
+          <dd><span style="--p:79%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Selenium</dt>
+          <dd><span style="--p:65%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Locust Load Testing</dt>
+          <dd><span style="--p:45%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>N8N / Make.com</dt>
+          <dd><span style="--p:75%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt> Basic Azure DevOps for QA</dt>
+          <dd><span style="--p:30%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Docker</dt>
+          <dd><span style="--p:40%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Postman</dt>
+          <dd><span style="--p:50%"></span></dd>
+        </div>
+      </dl>
+    </div>
+
+
+    <!-- Soft Skills -->
+    <div class="skill-block">
+      <h3>Soft Skills</h3>
+      <ul class="soft-list">
+        <li><strong>Teamwork</strong> — Agile collaboration with clear communication</li>
+        <li><strong>Problem solving</strong> — Practical debugging & root cause analysis</li>
+        <li><strong>Quality</strong> — Tests & CI for reliable delivery</li>
+        <li><strong>Adaptability</strong> — Quickly learning new tools, frameworks, and workflows</li>
+        <li><strong>Time Management</strong> — Efficiently balancing multiple tasks and deadlines</li>
+        <li><strong>Critical Thinking</strong> — Evaluating problems strategically for optimal solutions</li>
+        <li><strong>Creativity</strong> — Designing elegant solutions and improving user experiences</li>
+        <li><strong>Leadership</strong> — Guiding small teams or mentoring peers when needed</li>
+        <li><strong>Empathy & Communication</strong> — Understanding user needs and team perspectives</li>
       </ul>
     </div>
-    <div class="skill-card">
-      <h4>Frameworks & Libraries</h4>
-      <ul>
-        <li>CodeIgniter</li>
-        <li>Bootstrap</li>
-        <li>Playwright (Automation Testing)</li>
-        <li>PHPMaker</li>
-      </ul>
+
+    <!-- Frameworks & Tools -->
+    <div class="skill-block">
+      <h3>Frameworks & Tools</h3>
+      <dl class="skill-list">
+        <div class="skill-item">
+          <dt>Django</dt>
+          <dd><span style="--p:60%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Vue.js</dt>
+          <dd><span style="--p:55%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>React</dt>
+          <dd><span style="--p:50%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Ollama</dt>
+          <dd><span style="--p:30%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>LLM</dt>
+          <dd><span style="--p:30%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Vite</dt>
+          <dd><span style="--p:80%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>PHPMAKER</dt>
+          <dd><span style="--p:60%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>LARAVEL</dt>
+          <dd><span style="--p:70%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Codeigniter </dt>
+          <dd><span style="--p:90%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Filezilla</dt>
+          <dd><span style="--p:60%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>SQLite</dt>
+          <dd><span style="--p:70%"></span></dd>
+        </div>
+      </dl>
     </div>
-    <div class="skill-card">
-      <h4>Testing & QA Tools</h4>
-      <ul>
-        <li>JIRA</li>
-        <li>Swagger</li>
-        <li>Postman</li>
-        <li>Manual Testing</li>
-        <li>Selenium</li>
-        <li>Playwright + Typescript</li>
-      </ul>
+
+  <div class="skill-block">
+      <h3>Project Management Tools</h3>
+      <dl class="skill-list">
+        <div class="skill-item">
+          <dt>JIRA</dt>
+          <dd><span style="--p:65%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Trello</dt>
+          <dd><span style="--p:75%"></span></dd>
+        </div>
+        <div class="skill-item">
+          <dt>Google Spreadsheet</dt>
+          <dd><span style="--p:85%"></span></dd>
+        </div>
+      </dl>
     </div>
-    <div class="skill-card">
-      <h4>Databases & Tools</h4>
-      <ul>
-        <li>MySQL</li>
-        <li>PgAdmin</li>
-        <li>Navicat</li>
-        <li>WAMPserver</li>
-      </ul>
-    </div>
-    <div class="skill-card">
-      <h4>Cybersecurity</h4>
-      <ul>
-        <li>Network Security Basics</li>
-        <li>Secure Coding Practices</li>
-        <li>Database Validation</li>
-        <li>CCNA Fundamentals</li>
-      </ul>
-    </div>
+
   </div>
 </section>
 
 
+    <!-- Contact -->
+    <section id="contact" class="section reveal contact-section">
+      <h2>Let's connect</h2>
+      <p class="muted">Open to remote & hybrid roles. Reach me at:</p>
 
+      <div class="contact-cards">
+        <div class="contact-card">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M2 4v16h20V4H2zm10 8l8-5H4l8 5z"></path>
+          </svg>
+          <p class="small">Email</p>
+          <a href="mailto:christopherjohnbalolong@gmail.com">christopherjohnbalolong@gmail.com</a>
+        </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>If you'd like to collaborate or learn more about my work, feel free to reach out!</p>
-    <p><strong>Email:</strong> <a href="mailto:christopherjohnbalolong@gmail.com">christopherjohnbalolong@gmail.com</a></p>
-    <p><strong>Phone:</strong> 09923661223</p>
-    <p><strong>Location:</strong> Dagupan City, Pangasinan, Philippines</p>
-  </section>
+        <div class="contact-card">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l3 6 6 .5-4.5 4 1 6-5.5-3-5.5 3 1-6L3 8.5 9 8z"></path>
+          </svg>
+          <p class="small">GitHub</p>
+          <a href="https://github.com/chris99-j" target="_blank" rel="noopener noreferrer">github.com/chris99-j</a>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2025 System. All rights reserved.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Christopher John Balolong · All rights reserved</p>
+    </div>
   </footer>
 
+  
+
+  <!-- App JS -->
   <script src="script.js"></script>
 </body>
+
 </html>
