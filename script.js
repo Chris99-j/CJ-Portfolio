@@ -149,3 +149,58 @@
 
 })();
 
+(function qaCarousel() {
+  const carousel = document.getElementById('qaCarousel');
+  const btnPrev = document.getElementById('prevQA');
+  const btnNext = document.getElementById('nextQA');
+  if (!carousel) return;
+
+  function cardOffset() {
+    const first = carousel.querySelector('.project-card');
+    if (!first) return 360;
+    const style = getComputedStyle(first);
+    const gap = parseFloat(getComputedStyle(carousel).gap || 16);
+    return Math.round(first.offsetWidth + gap);
+  }
+
+  function scrollByDir(dir) {
+    carousel.scrollBy({ left: dir * cardOffset(), behavior: 'smooth' });
+  }
+
+  btnPrev && btnPrev.addEventListener('click', () => scrollByDir(-1));
+  btnNext && btnNext.addEventListener('click', () => scrollByDir(1));
+
+  carousel.addEventListener('keydown', (ev) => {
+    if (ev.key === 'ArrowRight') scrollByDir(1);
+    if (ev.key === 'ArrowLeft') scrollByDir(-1);
+  });
+
+  
+})();
+(function aiCarousel() {
+  const carousel = document.querySelector('#aiCarousel');
+  const btnPrev = document.querySelector('#prevAI');
+  const btnNext = document.querySelector('#nextAI');
+  if (!carousel) return;
+
+  function cardOffset() {
+    const first = carousel.querySelector('.project-card');
+    if (!first) return 360;
+    const style = getComputedStyle(first);
+    const gap = parseFloat(getComputedStyle(carousel).gap || 16);
+    return Math.round(first.offsetWidth + gap);
+  }
+
+  function scrollByDir(dir) {
+    carousel.scrollBy({ left: dir * cardOffset(), behavior: 'smooth' });
+  }
+
+  btnPrev && btnPrev.addEventListener('click', () => scrollByDir(-1));
+  btnNext && btnNext.addEventListener('click', () => scrollByDir(1));
+
+  // keyboard navigation
+  carousel.addEventListener('keydown', ev => {
+    if (ev.key === 'ArrowRight') scrollByDir(1);
+    if (ev.key === 'ArrowLeft') scrollByDir(-1);
+  });
+})();
