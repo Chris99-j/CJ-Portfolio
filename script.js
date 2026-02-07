@@ -204,3 +204,52 @@
     if (ev.key === 'ArrowLeft') scrollByDir(-1);
   });
 })();
+
+(function darkModeAvatar() {
+  const toggle = document.getElementById('darkToggle');
+  const avatar = document.getElementById('avatarPhoto');
+
+  if (!toggle || !avatar) return;
+
+  function applyMode(isDark) {
+    document.body.classList.toggle('light', !isDark);
+    avatar.src = isDark ? avatar.dataset.dark : avatar.dataset.light;
+    toggle.textContent = isDark ? '☀️' : '🌙';
+  }
+
+  // Load saved mode
+  const saved = localStorage.getItem('darkMode') === 'true';
+  applyMode(saved);
+
+  // Toggle dark/light mode
+  toggle.addEventListener('click', () => {
+    const isDark = !document.body.classList.contains('light');
+    localStorage.setItem('darkMode', String(!isDark));
+    applyMode(!isDark);
+  });
+
+  // Hover effect for desktop
+  avatar.addEventListener('mouseenter', () => {
+    const isDark = !document.body.classList.contains('light');
+    avatar.src = isDark ? avatar.dataset.darkHover : avatar.dataset.lightHover;
+  });
+
+  avatar.addEventListener('mouseleave', () => {
+    const isDark = !document.body.classList.contains('light');
+    avatar.src = isDark ? avatar.dataset.dark : avatar.dataset.light;
+  });
+
+  // Tap effect for mobile (touch devices)
+ avatar.addEventListener('click', () => {
+  const isDark = !document.body.classList.contains('light');
+  const defaultSrc = isDark ? avatar.dataset.dark : avatar.dataset.light;
+  const hoverSrc = isDark ? avatar.dataset.darkHover : avatar.dataset.lightHover;
+
+  // Temporarily show hover image for 1 second
+  avatar.src = hoverSrc;
+  setTimeout(() => {
+    avatar.src = defaultSrc;
+  }, 1000); // 1 second delay
+});
+
+})();

@@ -76,7 +76,24 @@ body {
 .hero-section{padding:54px 0 32px}
 .hero-grid{display:grid;grid-template-columns:1fr 220px;gap:28px;align-items:center}
 .hero-text .muted-intro{color:var(--accent-2);font-weight:600;margin:0 0 6px}
-.hero-title{font-size:2.6rem;margin:0 0 10px;color:#fff}
+.hero-title {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* 🌞 Light mode (awake) */
+body.light .hero-title {
+  color: #0f172a; /* slate-900 → strong contrast on white */
+}
+
+/* 🌙 Dark mode (sleeping) */
+body:not(.light) .hero-title {
+  color: #e5e7eb; /* soft white */
+  text-shadow: 0 0 10px rgba(148,163,184,0.25);
+}
+
 .hero-sub{color:var(--muted);max-width:62ch}
 .hero-actions{margin-top:16px;display:flex;gap:12px;align-items:center}
 .btn{cursor:pointer;border:0;padding:10px 16px;border-radius:999px;font-weight:600}
@@ -248,3 +265,16 @@ body {
   background-color: #f0f0f0;
 }
 
+body.light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body.light .site-header {
+  background: rgba(255,255,255,0.9);
+}
+
+body.light .project-card {
+  background: #ffffff;
+  color: #0f172a;
+}
