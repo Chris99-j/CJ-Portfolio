@@ -533,8 +533,8 @@ body.light .carousel-btn {
   animation: float-in 1.5s forwards;
 }
 
-.card-1 { top: -20px; left: -30px; animation-delay: 0.5s; }
-.card-2 { top: -25px; right: -25px; animation-delay: 0.8s; }
+.card-1 { top: -20px; left: -50px; animation-delay: 0.5s; }
+.card-2 { top: -25px; right: -80px; animation-delay: 0.8s; }
 .card-3 { bottom: -15px; left: -25px; animation-delay: 1.1s; }
 .card-4 { bottom: -25px; right: -25px; animation-delay: 1.4s; }
 @keyframes float-in {
