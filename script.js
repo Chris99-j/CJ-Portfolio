@@ -253,3 +253,16 @@
 });
 
 })();
+
+
+const mobileCarousel = document.getElementById("mobileCarousel");
+const prevMobile = document.getElementById("prevMobile");
+const nextMobile = document.getElementById("nextMobile");
+
+prevMobile.addEventListener("click", () => {
+  mobileCarousel.scrollBy({ left: -300, behavior: "smooth" });
+});
+
+nextMobile.addEventListener("click", () => {
+  mobileCarousel.scrollBy({ left: 300, behavior: "smooth" });
+});
